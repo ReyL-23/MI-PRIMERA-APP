@@ -5,8 +5,8 @@ import { Plataformas } from './paginas/plataformas/plataformas';
 import { Tops } from './paginas/tops/tops';
 import { Galeria } from './paginas/galeria/galeria';
 import { Contacto } from './paginas/contacto/contacto';
-import { Blogs } from './paginas/blogs/blogs';
 import { Inicio } from './paginas/inicio/inicio';
+import { Publicaciones } from './paginas/publicaciones/publicaciones';
 
 export const routes: Routes = [
     {
@@ -35,7 +35,7 @@ export const routes: Routes = [
     },
     {
         path: "blogs",
-        component: Blogs,
+        component: Publicaciones,
     },
     {
         path: "inicio",
@@ -45,7 +45,7 @@ export const routes: Routes = [
         path:"",
         redirectTo:"/inicio",
         pathMatch: "full",
-        
+
     }
 
 

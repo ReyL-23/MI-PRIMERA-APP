@@ -1,0 +1,35 @@
+.gamer-header {
+  background: linear-gradient(135deg, #0d0d0d, #1a1a40);
+  border-bottom: 4px solid #ff0040;
+  box-shadow: 0px 0px 15px #ff0040;
+}
+
+/* Texto neón principal */
+.neon-text {
+  font-family: 'Press Start 2P', cursive; /* Fuente retro gamer */
+  color: #78b36e;
+  text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14, 0 0 20px #39ff14;
+  letter-spacing: 2px;
+  animation: flicker 2s infinite alternate;
+}
+
+/* Texto estilo consola */
+.pixel-text {
+  font-family: 'VT323', monospace;
+  color: #fff;
+  font-size: 1.3rem;
+}
+
+/* Subtítulo neón */
+.neon-subtitle {
+  font-family: 'Press Start 2P', cursive;
+  color: #ffcc00;
+  text-shadow: 0px 0px 8px #ffcc00;
+  margin-bottom: 2rem;
+}
+
+/* Animación flicker (efecto parpadeo gamer) */
+@keyframes flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% { text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14, 0 0 20px #39ff14; }
+  20%, 24%, 55% { text-shadow: none; }
+}

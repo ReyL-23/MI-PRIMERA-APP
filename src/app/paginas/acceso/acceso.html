@@ -1,24 +1,51 @@
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="card mt-5">
-                <div class="card-header">Sign In</div>
-                <div class="card-body">
-                    <form #miformulario="ngForm"(ngSubmit)="alsubir(miformulario)">
-                        <div class="form-group">
-                            <label for="email">Email address</label>
-                            <input type="email" class="form-control" id="email" [(ngModel)]="usuario.correo" name="email"
-                                required>
-                        </div>
-                        <div class="form-group">
-                            <label for="password">Password</label>
-                            <input type="password" class="form-control" id="password" [(ngModel)]="usuario.contrasena"
-                                name="password" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-block">Sign In</button>
-                    </form>
-                </div>
-            </div>
+<form [formGroup]="iniciarSesionFormulario">
+  <div class="mb-3">
+    <label for="correo" class="form-label">Correo</label>
+    <input
+      id="correo"
+      formControlName="correo"
+      type="email"
+      class="form-control"
+      aria-describedby="masInfoCorreo"
+    >
+    <div id="masInfoCorreo" class="form-text">El correo asociado a tu cuenta.</div>
+    @if (correo.invalid && (correo.dirty || correo.touched)) {
+        <div class="text-danger">
+            @if (correo.errors?.['required']) {
+                El correo es requerido.
+            }
+            @if (correo.errors?.['email']) {
+                El Email debe tener un formato válido.
+            }
         </div>
-    </div>
-</div>
+    }
+  </div>
+  <div class="mb-3">
+    <label for="contrasena" class="form-label">Contraseña</label>
+    <input id="contrasena" formControlName="contrasena" type="password" class="form-control" />
+    @if (contrasena.invalid && (contrasena.dirty || contrasena.touched)) {
+        <div class="text-danger">
+            @if (contrasena.errors?.['required']) {
+                La contraseña es requerida.
+            }
+            @if (contrasena.errors?.['minlength']) {
+                La contraseña requiere de minimo seis caracteres.
+            }
+        </div>
+    }
+  </div>
+  <button
+    type="submit"
+    class="btn btn-primary"
+    (click)="iniciarSesion()"
+    [disabled]="iniciarSesionFormulario.invalid"
+	>
+    Iniciar sesion
+  </button>
+
+	@if (mensajeError) {
+		<div class="mt-4">
+			<p class="alert alert-danger">{{ mensajeError }}</p>
+		</div>
+	}
+</form>

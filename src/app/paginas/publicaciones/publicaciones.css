@@ -1,3 +1,4 @@
+/* Fondo gamer con gradiente oscuro */
 .gamer-header {
   background: linear-gradient(135deg, #0d0d0d, #1a1a40);
   border-bottom: 4px solid #ff0040;
@@ -34,3 +35,16 @@
   20%, 24%, 55% { text-shadow: none; }
 }
 
+/* Estilo de las tarjetas gamer */
+.gamer-card {
+  background: #111;
+  color: #fff;
+  border: 2px solid #39ff14;
+  border-radius: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gamer-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #39ff14;
+}

@@ -1,0 +1,47 @@
+
+<header class="gamer-header text-center py-5">
+  <div class="container">
+    <h1 class="display-6 neon-text">¡Press Start para entrar en nuestro mundo!</h1>
+    <p class="lead pixel-text">Prepárate para subir de nivel con reseñas, noticias y curiosidades del universo gamer.</p>
+  </div>
+</header>
+
+<div class="container my-5">
+  <h2 class="text-center neon-subtitle"> Publicaciones Existentes </h2>
+
+  @if (publicaciones$ | async; as publicaciones) {
+    @if (publicaciones.length > 0) {
+      <div class="row justify-content-center g-4">
+        @for (publicacion of publicaciones; track publicacion.id) {
+          <div class="col-md-4">
+            <div class="card gamer-card h-100">
+              <div class="card-body">
+                <h5 class="card-title">{{publicacion.titulo}}</h5>
+                <h6 class="card-subtitle mb-2">✍️ {{publicacion.autor}}</h6>
+                <p class="card-text">{{publicacion.contenido}}</p>
+              </div>
+              <div class="card-footer">
+                <small>
+               fecha de publicacion: {{publicacion.fecha |date:"medium"}}
+                </small>
+            </div>
+            </div>
+          </div>
+        }
+      </div>
+    } @else {
+      <p class="text-center pixel-text">⚠️ No hay publicaciones para mostrar ⚠️</p>
+    }
+  } @else {
+    <p class="text-center pixel-text">⏳ Cargando publicaciones...</p>
+  }
+</div>
+<hr class="my-4" />
+
+@if (estaAutenticado()) {
+    <div class="d-flex">
+        <button type="button" class="btn btn-primary" (click)="nuevaPublicacionDialogo()">
+        Nueva publicacion
+        </button>
+</div>
+}

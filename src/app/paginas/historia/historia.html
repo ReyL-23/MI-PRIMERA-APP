@@ -1,8 +1,19 @@
+
 <!-- Historia del videojuego -->
-  <section class="container my-5">
+
+<header class="gamer-header text-center py-5">
+  <div class="container">
+    <h1 class="display-6 neon-text">Historia de los Videojuegos</h1>
+    <p class="lead pixel-text">Un recorrido desde los píxeles más simples hasta los mundos virtuales más complejos.</p>
+  </div>
+</header>
+
+
+<section>
+  <!-- 
     <h1 class="text-center mb-4">Historia de los Videojuegos</h1>
     <p class="lead text-center">Un recorrido desde los píxeles más simples hasta los mundos virtuales más complejos.</p>
-
+ -->
     <div ngbAccordion>
 
       <!-- Orígenes (1950-1970) -->
@@ -22,15 +33,14 @@
       </div>
 
       <!-- Era dorada de los arcades -->
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="heading2">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-            data-bs-target="#collapse2">
+      <div ngbAccordionItem >
+        <h2 ngbAccordionHeader>
+          <button ngbAccordionButton>
             🕹️ La era dorada de los arcades (1970–1983)
           </button>
         </h2>
-        <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#historiaAccordion">
-          <div class="accordion-body">
+        <div ngbAccordionCollapse>
+          <div ngbAccordionBody>
             En 1972, Atari lanza <strong>Pong</strong>, el primer videojuego arcade comercial. Le siguieron éxitos como
             <em>Space Invaders</em> (1978), <em>Pac-Man</em> (1980) y <em>Donkey Kong</em> (1981). Esta era consolidó
             los videojuegos como entretenimiento masivo.
@@ -39,15 +49,14 @@
       </div>
 
       <!-- Crisis de 1983 -->
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="heading3">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-            data-bs-target="#collapse3">
+      <div ngbAccordionItem >
+        <h2 ngbAccordionHeader>
+          <button ngbAccordionButton>
             💥 La gran crisis del videojuego (1983)
           </button>
         </h2>
-        <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#historiaAccordion">
-          <div class="accordion-body">
+        <div ngbAccordionCollapse>
+          <div ngbAccordionBody>
             El mercado colapsó por la sobreproducción y baja calidad de muchos títulos, como el infame <em>E.T. the
               Extra-Terrestrial</em> de Atari. Las ventas cayeron drásticamente y se pensó que los videojuegos estaban
             en declive.
@@ -56,15 +65,14 @@
       </div>
 
       <!-- Renacimiento con Nintendo -->
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="heading4">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-            data-bs-target="#collapse4">
+      <div ngbAccordionItem >
+        <h2 ngbAccordionHeader>
+          <button ngbAccordionButton>
             🎮 El renacer con Nintendo (1985–1995)
           </button>
         </h2>
-        <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#historiaAccordion">
-          <div class="accordion-body">
+        <div ngbAccordionCollapse>
+          <div ngbAccordionBody>
             Nintendo revivió la industria con la NES y títulos como <strong>Super Mario Bros</strong>, <em>The Legend of
               Zelda</em> y <em>Metroid</em>. A finales de los 80 y principios de los 90, también surgieron <strong>Sega
               Genesis</strong> y la guerra de consolas.
@@ -73,15 +81,14 @@
       </div>
 
       <!-- Era 3D y CD -->
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="heading5">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-            data-bs-target="#collapse5">
+      <div ngbAccordionItem >
+        <h2 ngbAccordionHeader>
+          <button ngbAccordionButton>
             🧠 Gráficos 3D y CD-ROM (1995–2005)
           </button>
         </h2>
-        <div id="collapse5" class="accordion-collapse collapse" data-bs-parent="#historiaAccordion">
-          <div class="accordion-body">
+        <div ngbAccordionCollapse>
+          <div ngbAccordionBody>
             Sony revolucionó con la <strong>PlayStation</strong>. Los gráficos 3D y el uso de CD-ROM permitieron títulos
             icónicos como <em>Final Fantasy VII</em>, <em>Tomb Raider</em> y <em>Metal Gear Solid</em>. Microsoft se
             unió al mercado con la Xbox original en 2001.
@@ -90,15 +97,14 @@
       </div>
 
       <!-- Era HD, online y e-sports -->
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="heading6">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-            data-bs-target="#collapse6">
+      <div ngbAccordionItem >
+        <h2 ngbAccordionHeader>
+          <button ngbAccordionButton>
             🌐 Consolas HD, PC Gaming y eSports (2005–2015)
           </button>
         </h2>
-        <div id="collapse6" class="accordion-collapse collapse" data-bs-parent="#historiaAccordion">
-          <div class="accordion-body">
+        <div ngbAccordionCollapse>
+          <div ngbAccordionBody>
             La <strong>Xbox 360</strong> y la <strong>PlayStation 3</strong> impulsaron el juego online, los
             logros/trofeos y las campañas cinematográficas. En paralelo, el <strong>PC gaming</strong> se consolidó
             gracias a <em>Steam</em>, los mods y títulos como <em>League of Legends</em> y <em>World of Warcraft</em>.
@@ -107,15 +113,14 @@
       </div>
 
       <!-- Actualidad -->
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="heading7">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-            data-bs-target="#collapse7">
+      <div ngbAccordionItem >
+        <h2 ngbAccordionHeader>
+          <button ngbAccordionButton>
             🔮 Presente y futuro de los videojuegos (2015–Actualidad)
           </button>
         </h2>
-        <div id="collapse7" class="accordion-collapse collapse" data-bs-parent="#historiaAccordion">
-          <div class="accordion-body">
+       <div ngbAccordionCollapse>
+          <div ngbAccordionBody>
             Hoy vivimos la era de los <strong>juegos en la nube</strong>, el <strong>cross-play</strong>, los gráficos
             fotorrealistas y la <strong>realidad virtual</strong>. Plataformas como <em>PlayStation 5</em>, <em>Xbox
               Series X</em>, <em>Steam Deck</em> y servicios como <em>Xbox Game Pass</em> y <em>NVIDIA GeForce Now</em>

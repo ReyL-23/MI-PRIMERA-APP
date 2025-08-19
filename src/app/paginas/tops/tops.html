@@ -1,1 +1,50 @@
-<p>tops works!</p>
+<header class="gamer-header text-center py-5">
+  <div class="container">
+    <h1 class="display-6 neon-text">Top 5 de Juegos por Plataforma</h1>
+    <p class="lead pixel-text">Los mejores a consideración de muchos.</p>
+  </div>
+</header>
+
+<div class="container my-5">
+
+<ul ngbNav #nav="ngbNav" class="nav-tabs">
+	<li [ngbNavItem]="1">
+		<button ngbNavLink>Nintendo</button>
+		<ng-template ngbNavContent>
+			@for (juego of juegonintendo; track juego.nombre) {
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <img [src]="juego.imagen" class="game-img">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ juego.nombre }}</h5>
+                                <p class="card-text">{{ juego.fecha }} - {{ juego.desarrollador }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+		</ng-template >
+	</li>
+
+    <li [ngbNavItem]="2">
+		<button ngbNavLink>Xbox</button>
+		<ng-template ngbNavContent>
+			@for (juego of juegoxbox; track juego.nombre) {
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <img [src]="juego.imagen" class="game-img">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ juego.nombre }}</h5>
+                                <p class="card-text">{{ juego.fecha }} - {{ juego.desarrollador }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+		</ng-template>
+	</li>
+
+</ul>
+<div [ngbNavOutlet]="nav" class="mt-2"></div>

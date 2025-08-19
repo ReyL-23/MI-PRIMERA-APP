@@ -1,0 +1,57 @@
+<div class="modal-header">
+	<h4 class="modal-title">Nueva Publicacion</h4>
+	<button type="button" class="btn-close" aria-label="Close" (click)="dialogoActivo.dismiss()"></button>
+</div>
+<div class="modal-body">
+	<form [formGroup]="formularioPublicacion">
+		<div class="mb-3">
+			<label for="autor" class="form-label">Autor</label>
+			<input id="autor" formControlName="autor" type="text" class="form-control" />
+			@if (autor.invalid && (autor.dirty || autor.touched)) {
+				<div class="text-danger">
+					@if (autor.errors?.['required']) {
+						El autor es requeridp.
+					}
+				</div>
+			}
+		</div>
+		<div class="mb-3">
+			<label for="titulo" class="form-label">Titulo</label>
+			<input id="titulo" formControlName="titulo" type="text" class="form-control">
+			@if (titulo.invalid && (titulo.dirty || titulo.touched)) {
+				<div class="text-danger">
+					@if (titulo.errors?.['required']) {
+						El titulo es requerido.
+					}
+				</div>
+			}
+		</div>
+
+		<div class="mb-3">
+			<label for="contenido" class="form-label">Contenido</label>
+			<input id="contenido" formControlName="contenido" type="text" class="form-control" />
+			@if (contenido.invalid && (contenido.dirty || contenido.touched)) {
+				<div class="text-danger">
+					@if (contenido.errors?.['required']) {
+						El contenido es requerido.
+					}
+				</div>
+			}
+		</div>
+
+		@if (mensajeError) {
+			<div class="mt-4">
+				<p class="alert alert-danger">{{ mensajeError }}</p>
+			</div>
+		}
+	</form>
+
+</div>
+<div class="modal-footer justify-content-between">
+	<button type="button" class="btn btn-outline-danger" (click)="dialogoActivo.close()">
+		Cancelar
+	</button>
+	<button type="submit" class="btn btn-primary" (click)="crearPublicacion()" [disabled]="formularioPublicacion.invalid">
+		Crear
+	</button>
+</div>
