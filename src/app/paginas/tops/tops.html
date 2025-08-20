@@ -18,7 +18,7 @@
                             <img [src]="juego.imagen" class="game-img">
                             <div class="card-body">
                                 <h5 class="card-title">{{ juego.nombre }}</h5>
-                                <p class="card-text">{{ juego.fecha }} - {{ juego.desarrollador }}</p>
+                                <p class="card-text">{{ juego.fecha }} - {{ juego.plataforma }}</p>
                             </div>
                         </div>
                     </div>
@@ -37,7 +37,7 @@
                             <img [src]="juego.imagen" class="game-img">
                             <div class="card-body">
                                 <h5 class="card-title">{{ juego.nombre }}</h5>
-                                <p class="card-text">{{ juego.fecha }} - {{ juego.desarrollador }}</p>
+                                <p class="card-text">{{ juego.fecha }} - {{ juego.plataforma }}</p>
                             </div>
                         </div>
                     </div>
@@ -46,5 +46,42 @@
 		</ng-template>
 	</li>
 
+     <li [ngbNavItem]="3">
+		<button ngbNavLink>Pc</button>
+		<ng-template ngbNavContent>
+			@for (juego of juegopc; track juego.nombre) {
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <img [src]="juego.imagen" class="game-img">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ juego.nombre }}</h5>
+                                <p class="card-text">{{ juego.fecha }} - {{ juego.plataforma }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+		</ng-template>
+	</li>
+
+     <li [ngbNavItem]="4">
+		<button ngbNavLink>Playstation</button>
+		<ng-template ngbNavContent>
+			@for (juego of juegoplaystation; track juego.nombre) {
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <img [src]="juego.imagen" class="game-img">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ juego.nombre }}</h5>
+                                <p class="card-text">{{ juego.fecha }} - {{ juego.plataforma }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+		</ng-template>
+	</li>
 </ul>
 <div [ngbNavOutlet]="nav" class="mt-2"></div>
