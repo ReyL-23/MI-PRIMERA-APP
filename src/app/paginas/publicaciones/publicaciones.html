@@ -24,10 +24,12 @@
           <small>
             fecha de publicacion: {{publicacion.fecha |date:"medium"}}
           </small>
+          @if (estaAutenticado()){
           <div class="d-flex justify-content-between">
             <button type="button" class="btn btn-primary" (click)="editarPublicacion(publicacion)">Editar</button>
             <button type="button" class="btn btn-danger" (click)="eliminarPublicacion(publicacion)">Borrar</button>
           </div>
+        }
 
         </div>
       </div>
@@ -50,3 +52,6 @@
   </button>
 </div>
 }
+<div class=" pb-5 mb-5">
+
+</div>
