@@ -1,5 +1,11 @@
+
 <div class="modal-header">
-	<h4 class="modal-title">Nueva Publicacion</h4>
+	<h4 class="modal-title">
+		@if (accion() === 'Crear') {
+			Nueva Publicacion
+		} @else {
+			Editar Publicacion
+		}</h4>
 	<button type="button" class="btn-close" aria-label="Close" (click)="dialogoActivo.dismiss()"></button>
 </div>
 <div class="modal-body">
@@ -10,7 +16,7 @@
 			@if (autor.invalid && (autor.dirty || autor.touched)) {
 				<div class="text-danger">
 					@if (autor.errors?.['required']) {
-						El autor es requeridp.
+						El autor es requerido.
 					}
 				</div>
 			}
@@ -51,7 +57,13 @@
 	<button type="button" class="btn btn-outline-danger" (click)="dialogoActivo.close()">
 		Cancelar
 	</button>
-	<button type="submit" class="btn btn-primary" (click)="crearPublicacion()" [disabled]="formularioPublicacion.invalid">
-		Crear
-	</button>
+	@if (accion() === 'Crear') {
+		<button type="submit" class="btn btn-primary" (click)="crearPublicacion()" [disabled]="formularioPublicacion.invalid">
+			Crear
+		</button>
+	} @else {
+		<button type="submit" class="btn btn-secondary" (click)="editarPublicacion()" [disabled]="formularioPublicacion.invalid">
+			Editar
+		</button>
+	}
 </div>

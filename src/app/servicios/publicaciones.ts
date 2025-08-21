@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 
 /** Es el mismo modelo que hicimos en Mongoose para las publicaciones. */
 export interface Publicacion {
-	id?: string;
+	_id?: string;
 	titulo: string;
 	contenido: string;
 	autor?: string;
